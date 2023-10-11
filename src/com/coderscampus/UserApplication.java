@@ -12,22 +12,15 @@ public class UserApplication {
 	public static void main(String[] args) {
 		
 		BufferedReader fileReader = null;
+		String[] stringInput = null;
+		String line = "";
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
-			String line = "";
 			while ((line = fileReader.readLine()) != null) {
 				// This is where I will read my data into an Array 
 				// so that I can compare it later
 				System.out.println(line);
-				String[] stringInput = line.split(",");
-				UserService userService = new UserService();
-				User users = userService.createUser(stringInput);
-				System.out.println(users.getName());
-				System.out.println(users.getPassword());
-				System.out.println(users.getUsername());
-				
 			}
-
 		} catch (FileNotFoundException e) {
 			System.out.println("Oops, the file wasn't found");
 			e.printStackTrace();
@@ -44,7 +37,17 @@ public class UserApplication {
 			}
 		}
 
+		stringInput = line.split(",");
+		UserService userService = new UserService();
+		User users = userService.createUser(stringInput);
+		for (String[] user : users) {
+			System.out.println(users.getName());
+			System.out.println(users.getPassword());
+			System.out.println(users.getUsername());
+		}
 
+		
+		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Type in your Username:");
 		String usernameInput = scanner.nextLine();
