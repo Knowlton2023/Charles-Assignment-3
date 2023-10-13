@@ -40,7 +40,8 @@ public class UserApplication {
 		stringInput = line.split(",");
 		UserService userService = new UserService();
 		User users = userService.createUser(stringInput);
-		for (String[] user : users) {
+
+		for (String user : stringInput) {
 			System.out.println(users.getName());
 			System.out.println(users.getPassword());
 			System.out.println(users.getUsername());
