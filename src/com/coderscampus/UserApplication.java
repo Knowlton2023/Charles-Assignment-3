@@ -16,17 +16,18 @@ public class UserApplication {
 		String[] inputs = null;
 		UserService userService = new UserService();
 		User[] users = new User[4];
+
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
+			int i = 0;
 			while ((line = fileReader.readLine()) != null) {
 				// This is where I will read my data into an Array 
 				// so that I can compare it later
 
 				//Testing Only
-				//System.out.println(line);
+//				System.out.println(line);
 
 				inputs = line.split(",");
-				int i = 0;
 				users[i] = userService.createUser(inputs);
 				i++;
 			}
@@ -44,22 +45,13 @@ public class UserApplication {
 				e.printStackTrace();
 			}
 		}
+		// Testing ONLY
+//		for (User user : users) {
+//			System.out.println("Username: " + user.getUsername());
+//			System.out.println("Password: " + user.getPassword());
+//			System.out.println("Name: " + user.getName());
+//		}
 
-		for (int j =0; j < 4; j++) {
-			System.out.println("Username: " + users[j].getUsername());
-			System.out.println("Password: " + users[j].getPassword());
-			System.out.println("Name: " + users[j].getName());
-		}
-
-		
-		for (String[] user : users) {
-			System.out.println(user);
-		}
-
-
-
-		
-		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Type in your Username:");
 		String usernameInput = scanner.nextLine();

@@ -9,13 +9,4 @@ public class UserService {
 		user.setName(stringInput[2]);
 		return user;
 	}
-
-	public String[] parseText (String inputs) {
-		String[] splitString = inputs.split(",");
-		return splitString;
-	}	
-
-
-
-
 }
