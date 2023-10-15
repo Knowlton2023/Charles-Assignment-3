@@ -12,12 +12,10 @@ public class UserApplication {
 	public static void main(String[] args) {
 		
 		BufferedReader fileReader = null;
-		String[] stringInputs = null;
 		String line = "";
-//		UserService userService = new UserService();
+		String[] inputs = null;
 		UserService userService = new UserService();
 		User[] users = new User[4];
-		int i = 0;
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
 			while ((line = fileReader.readLine()) != null) {
@@ -27,8 +25,9 @@ public class UserApplication {
 				//Testing Only
 				//System.out.println(line);
 
-				stringInputs = line.split(",");
-				users[i] = userService.createUser(stringInputs);
+				inputs = line.split(",");
+				int i = 0;
+				users[i] = userService.createUser(inputs);
 				i++;
 			}
 		} catch (FileNotFoundException e) {
@@ -46,16 +45,17 @@ public class UserApplication {
 			}
 		}
 
-
-//		for (String user : users) {
-//			System.out.println(users);
-//		}
-
 		for (int j =0; j < 4; j++) {
 			System.out.println("Username: " + users[j].getUsername());
 			System.out.println("Password: " + users[j].getPassword());
 			System.out.println("Name: " + users[j].getName());
 		}
+
+		
+		for (String[] user : users) {
+			System.out.println(user);
+		}
+
 
 
 		
