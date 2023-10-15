@@ -10,6 +10,10 @@ public class UserService {
 		return user;
 	}
 
+	public String[] parseText (String inputs) {
+		String[] splitString = inputs.split(",");
+		return splitString;
+	}	
 
 
 
