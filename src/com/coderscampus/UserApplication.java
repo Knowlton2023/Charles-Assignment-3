@@ -16,28 +16,20 @@ public class UserApplication {
 		String line = "";
 //		UserService userService = new UserService();
 		UserService userService = new UserService();
-		User[] users = new User[3];
+		User[] users = new User[4];
 		int i = 0;
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
 			while ((line = fileReader.readLine()) != null) {
 				// This is where I will read my data into an Array 
 				// so that I can compare it later
-				System.out.println(line);
+
+				//Testing Only
+				//System.out.println(line);
 
 				stringInputs = line.split(",");
 				users[i] = userService.createUser(stringInputs);
 				i++;
-//				User users = userService.createUser(stringInputs);
-//					System.out.println(stringInputs[0]);
-//					System.out.println(stringInputs[1]);
-//					System.out.println(stringInputs[2]);
-
-//					System.out.println(users.getUsername());
-//					System.out.println(users.getPassword());
-//					System.out.println(users.getName());
-
-				
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Oops, the file wasn't found");
@@ -55,10 +47,15 @@ public class UserApplication {
 		}
 
 
-		for (int j = 0; j < 4; j++) {
-			System.out.println(users[j]);
-		}
+//		for (String user : users) {
+//			System.out.println(users);
+//		}
 
+		for (int j =0; j < 4; j++) {
+			System.out.println("Username: " + users[j].getUsername());
+			System.out.println("Password: " + users[j].getPassword());
+			System.out.println("Name: " + users[j].getName());
+		}
 
 
 		
