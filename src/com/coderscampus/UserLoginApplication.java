@@ -16,17 +16,12 @@ public class UserLoginApplication {
 		String[] inputs = null;
 		UserService userService = new UserService();
 		User[] users = new User[4];
-
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
 			int i = 0;
 			while ((line = fileReader.readLine()) != null) {
 				// This is where I will read my data into an Array 
 				// so that I can compare it later
-
-				//Testing Only
-//				System.out.println(line);
-
 				inputs = line.split(",");
 				users[i] = userService.createUser(inputs);
 				i++;
@@ -45,8 +40,6 @@ public class UserLoginApplication {
 				e.printStackTrace();
 			}
 		}
-
-
 
 		int guessCounter = 0;  // no guess attempt made yet
 		while (guessCounter < 5) {
@@ -70,11 +63,10 @@ public class UserLoginApplication {
 					
 				} else {
 					System.out.println("Invalid login, please try again.");
-					break;
 				}
-				scanner.close();
-			}
 			guessCounter++;
+			}
+			scanner.close();
 		
 		}
 		
