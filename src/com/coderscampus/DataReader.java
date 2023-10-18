@@ -5,7 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReader {
+public class DataReader {
+
 	BufferedReader fileReader = null;
 	String line = "";
 	String[] inputs = null;
