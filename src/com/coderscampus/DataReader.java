@@ -9,11 +9,10 @@ public class DataReader {
 
 	public User[] readData() {
 	
-		User[] users = new User[4];
 		BufferedReader fileReader = null;
 		String[] inputs = null;
 		UserService userService = new UserService();
-
+		User[] users = new User[4];
 		String line = "";
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
@@ -21,8 +20,8 @@ public class DataReader {
 			System.out.println("Oops, file not found exception");
 			e.printStackTrace();
 		}
-		int i = 0;
 		try {
+			int i = 0;
 			while ((line = fileReader.readLine()) != null) {
 				// This is where I will read my data into an Array 
 				// so that I can compare it later
