@@ -33,9 +33,7 @@ public class DataReader {
 			System.out.println("Oops, file I/O exception");
 			e.printStackTrace();
 		}
-	
 	return users;
-	
 	}
 
 }

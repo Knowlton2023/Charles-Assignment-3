@@ -10,5 +10,14 @@ public class UserService {
 		return user;
 	}
 
-
+	public User validateUsernameAndPassword(String usernameInput, String passwordInput) {
+		DataReader users = new DataReader();
+		for (User user : users.readData()) {
+			if (usernameInput.toLowerCase() == user.getUsername() && passwordInput == user.getPassword()) {
+				return user;
+			}
+		}
+		return null;
+	}
+	
 }

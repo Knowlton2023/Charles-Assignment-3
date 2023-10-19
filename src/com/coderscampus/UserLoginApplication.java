@@ -50,11 +50,6 @@ public class UserLoginApplication {
 
 			DataReader users = new DataReader();
 			for (User user : users.readData()) {
-				// Testing ONLY
-				System.out.println(user.getUsername());
-				System.out.println(user.getPassword());
-				System.out.println(user.getName());
-
 				if (guessCounter == 5) {
 					System.out.println("Too many failed login attempts, you are now locked out.");
 					break;
