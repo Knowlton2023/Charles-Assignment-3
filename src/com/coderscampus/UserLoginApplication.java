@@ -62,7 +62,7 @@ public class UserLoginApplication {
 
 		int guessCounter = 0;  // no guess attempt made yet
 		Scanner scanner = new Scanner(System.in);
-		while (guessCounter < 4) {
+		while (guessCounter < 5) {
 			System.out.println("Type in your Username:");
 			String usernameInput = scanner.nextLine();
 			System.out.println("Type in your Password:");
@@ -76,20 +76,15 @@ public class UserLoginApplication {
 				break;
 			} else {
 				System.out.println("Invalid login, please try again.");
+				guessCounter++;
 			}
 			
-			guessCounter++;
 		}
 		scanner.close();
 		
 		if (guessCounter == 5) {
 			System.out.println("Too many failed login attempts, you are now locked out.");
 		}
-		
-		
-		
-		
-	
 	
 	}
 
