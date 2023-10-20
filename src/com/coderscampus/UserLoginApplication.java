@@ -40,6 +40,33 @@ public class UserLoginApplication {
 //			}
 //		}
 
+//		int guessCounter = 0;  // no guess attempt made yet
+//		while (guessCounter < 4) {
+//			Scanner scanner = new Scanner(System.in);
+//			System.out.println("Type in your Username:");
+//			String usernameInput = scanner.nextLine();
+//			System.out.println("Type in your Password:");
+//			String passwordInput = scanner.nextLine();
+//
+//			DataReader users = new DataReader();
+//			for (User user : users.readData()) {
+//				if (guessCounter == 5) {
+//					System.out.println("Too many failed login attempts, you are now locked out.");
+//					break;
+//				} else if (usernameInput.toLowerCase() == user.getUsername() && passwordInput == user.getPassword()) {
+//					System.out.println("Welcome " + user.getName());
+//					break;
+//				} else {
+//					System.out.println("Invalid login, please try again.");
+//				}
+//
+//			}
+//			guessCounter++;
+//			scanner.close();
+//		}
+		
+
+		
 		int guessCounter = 0;  // no guess attempt made yet
 		while (guessCounter < 4) {
 			Scanner scanner = new Scanner(System.in);
@@ -50,22 +77,19 @@ public class UserLoginApplication {
 
 			DataReader users = new DataReader();
 			for (User user : users.readData()) {
-				if (guessCounter == 5) {
-					System.out.println("Too many failed login attempts, you are now locked out.");
-					break;
-				} else if (usernameInput.toLowerCase() == user.getUsername() && passwordInput == user.getPassword()) {
+				if (usernameInput.toLowerCase() == user.getUsername() && passwordInput == user.getPassword()) {
 					System.out.println("Welcome " + user.getName());
 					break;
-				} else {
-					System.out.println("Invalid login, please try again.");
-				}
-
+				} 
 			}
+
+			
+			
 			guessCounter++;
 			scanner.close();
 		}
 		
-	
+		
 		
 		
 		
