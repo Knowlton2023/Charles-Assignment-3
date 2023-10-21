@@ -13,11 +13,12 @@ public class UserService {
 	public User validateUsernameAndPassword(String usernameInput, String passwordInput) {
 		DataReader users = new DataReader();
 		for (User user : users.readData()) {
-			if (usernameInput.toLowerCase() == user.getUsername() && passwordInput == user.getPassword()) {
+			if (usernameInput.equalsIgnoreCase(user.getUsername()) && passwordInput.equalsIgnoreCase(user.getPassword())) {
 				return user;
 			}
 		}
 		return null;
 	}
+
 	
 }
